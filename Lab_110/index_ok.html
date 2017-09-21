@@ -1,35 +1,51 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
     <title>Lab</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .task-description,
+        .list-group {
+            font-size: 1.25em;
+        }
+    </style>
 </head>
+
 <body>
-    <h3>除錯任務，為何右邊的框框沒有出現圖片?</h3>
+    <div class="container">
 
-    <img id="imgRabbit"  src="rabbit_240x200.jpeg" />
+        <div class="page-header">
+            <h1>JavaScript 除錯練習</h1>
+        </div>
 
-    <canvas id="canvasLab" width="240" height="200"
-            style="border:1px solid #000000;"></canvas>
+        <p class="task-description">
+            請找出 JavaScript 的語法錯誤。提示:
+        </p>
 
+        <ul id="latestNews" class="list-group">
+            <li class="list-group-item">程式中的文字資料應該用一對雙引號或單引號前後包起來</li>
+            <li class="list-group-item">變數名稱大寫小寫有別</li>
+        </ul>
+
+        <p class="task-description">除錯完成之後，你應該會在下一行看到目前時間:</p>
+        <div id="report"></div>
+
+    </div>
+
+    <script src="../js/jquery.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
 
     <script>
 
-        window.onload = init;
+    var currentTime = Date();
+    document.getElementById("report").innerHTML = currentTime;
 
-        function init() {
-            var c = document.getElementById("canvasLab");
-            var ctx = c.getContext("2d");
 
-            ctx.arc(120, 100, 90, 0, 2 * Math.PI);
-            ctx.stroke();
-            ctx.clip();
-            ctx.drawImage(imgRabbit, 0, 0);
-
-        }
-
-        
     </script>
 
 </body>
+
 </html>
